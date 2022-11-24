@@ -48,7 +48,7 @@ const Products = () => {
           display: "grid",
           gridTemplateColumns: "repeat(3,1fr)",
           gap: "10px",
-          margin: "2rem 5rem",
+          margin: "1rem 5rem 5rem 5rem",
         }}
       >
         {products.map((product, index) => (
@@ -79,29 +79,35 @@ const Products = () => {
             <CardHeader />
 
             <Tooltip title={product?.title}>
-              <p className="title-mui">{product?.title.slice(0, 50)}... </p>
+              <p className="title-mui">{product?.title.slice(0, 50)}{product?.title?.length > 50 ? "...." : ""}</p>
             </Tooltip>
 
             <CardHeader />
             <p className="price-mui"> {`$ ${product?.price}`}</p>
             <CardContent>
               <Typography variant="body2" color="text.secondary">
-                {readmore !== product.id
-                  ? product.description.slice(0, 130)
-                  : product.description}
-                .....
-                {readmore !== product.id ? (
+                {readmore !== product?.id
+                  ? product?.description.slice(0, 130)
+                  : product?.description}
+                
+                {
+                  product?.description?.length > 120 ?
+                
+                readmore !== product?.id ? (
                   <button
                     className="btn_readmore"
                     onClick={() => ReadMore(product.id)}
                   >
-                    Read More
+                    .....Read More
                   </button>
                 ) : (
                   <button className="btn_readmore" onClick={Less}>
                     Less
                   </button>
-                )}
+                )
+                :
+                ""
+                }
               </Typography>
             </CardContent>
           </Card>
