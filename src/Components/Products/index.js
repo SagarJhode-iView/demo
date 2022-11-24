@@ -83,7 +83,7 @@ const Products = () => {
             </Tooltip>
 
             <CardHeader />
-            <p className="price-mui"> {`$ ${product?.price}`}</p>
+            <p className="price-mui"> {`$${product?.price}`}</p>
             <CardContent>
               <Typography variant="body2" color="text.secondary">
                 {readmore !== product?.id
