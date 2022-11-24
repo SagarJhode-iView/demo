@@ -48,7 +48,8 @@ code {
   margin: 0px !important;
   margin-top: -2.3vh !important;
   padding: 0px 1.3vw !important;
-   font-weight: 600;
+   font-weight: 500;
+   font-family: Arial, Helvetica, sans-serif;
 }
 .price-mui{
   margin: 0px;
