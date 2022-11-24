@@ -87,9 +87,9 @@ const Products = () => {
             <CardContent>
               <Typography variant="body2" color="text.secondary">
                 {readmore !== product.id
-                  ? product.description.slice(0, 150)
+                  ? product.description.slice(0, 130)
                   : product.description}
-                .......
+                .....
                 {readmore !== product.id ? (
                   <button
                     className="btn_readmore"
